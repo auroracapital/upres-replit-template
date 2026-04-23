@@ -1,0 +1,16 @@
+{
+  "name": "upres-batch-processor",
+  "version": "1.0.0",
+  "description": "Batch image upscaling via upres.ai API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["image-upscaling", "ai", "upres", "real-esrgan", "super-resolution"],
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "form-data": "^4.0.0"
+  }
+}
