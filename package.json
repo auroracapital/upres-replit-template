@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["image-upscaling", "ai", "upres", "real-esrgan", "super-resolution"],
+  "keywords": ["image-upscaling", "ai", "upres", "flare", "super-resolution"],
   "license": "MIT",
   "dependencies": {
     "node-fetch": "^3.3.2",

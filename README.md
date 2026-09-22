@@ -18,16 +18,22 @@ Upscaled images appear in `outputs/` with `_4x` in the filename.
 |---|---|---|
 | `UPRES_API_KEY` | required | Get at upres.ai |
 | `UPRES_SCALE` | `4` | `2`, `4`, `8` |
-| `UPRES_MODEL` | `wavespeed-ai/real-esrgan` | See below |
+| `UPRES_MODEL` | `flare` | See below |
 
 ## Models
 
-| Model | Best for |
+Public aliases only. `hush`, `keen`, and `visage` ignore `UPRES_SCALE`.
+
+| Alias | Best for |
 |---|---|
-| `wavespeed-ai/real-esrgan` | Photos, faces (default) |
-| `aura-sr` | High-detail artistic images |
-| `clarity-upscaler` | Max quality (slower) |
-| `esrgan-v1-x2plus` | 2x fast upscale |
+| `flare` | Everyday photos (default) |
+| `prism` | Text, logos, product shots |
+| `lumen` | Print detail, up to 8× |
+| `mirage` | Invented detail, art only |
+| `hush` | Denoise, same size |
+| `keen` | Deblur and sharpen, same size |
+| `visage` | Faces, does not enlarge |
+| `atelier` | Hush, Visage if a portrait, then Lumen |
 
 ## Local usage
 
@@ -49,7 +55,7 @@ Docs: [upres.ai/docs/api](https://upres.ai/docs/api) | OpenAPI: `https://api.upr
 curl -X POST https://api.upres.ai/v1/jobs \
   -H "Authorization: Bearer $UPRES_API_KEY" \
   -F "image=@photo.jpg" \
-  -F "model=wavespeed-ai/real-esrgan" \
+  -F "model=flare" \
   -F "scale=4"
 
 # Poll for result
@@ -59,8 +65,10 @@ curl https://api.upres.ai/v1/jobs/{id} \
 
 ## Pricing
 
-| Plan | Price | Ops/mo |
-|---|---|---|
-| BASIC | Free | 5 |
-| PRO | $19/mo | 100 |
-| BUSINESS | $49/mo | Unlimited |
+| Plan | Price | Stills / mo | 4K video |
+|---|---|---|---|
+| Free | $0 | 3 | 1 clip |
+| Creator | $9/mo | 50 | 20 min |
+| Pro | $19/mo | 100 | 30 min |
+| Studio | $39/mo | 250 | 90 min, API |
+| Business | $99/mo | 500 | 150 min |
