@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const API_KEY = process.env.UPRES_API_KEY;
 const SCALE = parseInt(process.env.UPRES_SCALE || '4');
-const MODEL = process.env.UPRES_MODEL || 'wavespeed-ai/real-esrgan';
+const MODEL = process.env.UPRES_MODEL || 'flare';
 const API_BASE = 'https://api.upres.ai/v1';
 const POLL_MS = 3000;
 const TIMEOUT_MS = 300000;
